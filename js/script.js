@@ -8,7 +8,7 @@ document.getElementById('gastos-ganhos-form').addEventListener('submit', functio
     const descricao = document.getElementById('descricao').value;   // Descrição da transação
     const valor = document.getElementById('valor').value;   // Valor da transação (em R$)
     const data = document.getElementById('data').value; // Data da transação
-
+    
      // Cria um objeto com os dados que serão enviados
      const dados = {
         data: [
@@ -27,7 +27,7 @@ document.getElementById('gastos-ganhos-form').addEventListener('submit', functio
         headers: {
             'Content-Type': 'application/json' // Define o tipo de conteúdo como JSON
         },
-        body: JSON.stringify(dados) // Converte os dados do formulário para JSON
+        body: JSON.stringify(dados) // Converte as informações do formulário para JSON
     })
     .then(response => response.json()) // Converte a resposta da API para JSON
     .then(data => {
@@ -39,4 +39,6 @@ document.getElementById('gastos-ganhos-form').addEventListener('submit', functio
         console.error('Erro:', error);
         alert('Ocorreu um erro ao registrar a transação.');
     });
+    
+    document.getElementById('gastos-ganhos-form').reset();
 });
