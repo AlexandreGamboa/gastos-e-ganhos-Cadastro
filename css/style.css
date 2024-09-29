@@ -43,3 +43,19 @@ button {
 button:hover {
     background-color: #45a049;
 }
+
+.loading {
+    width: 2.2rem;
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+
+        transform: rotate(360deg);
+    }
+}
