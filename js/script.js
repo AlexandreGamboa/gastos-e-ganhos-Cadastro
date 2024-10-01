@@ -2,7 +2,7 @@ const button = document.getElementById('button');
 
 // const para mudar o botão de enviar para imagem
 const addLoading = () => {
-    button.innerHTML = '<img src="./images/loading.png" class="loading">';
+    button.innerHTML = '<img src="../images/loading.png" class="loading">';
 }
 
 // const para mudar o botão de enviar para imagem
@@ -46,6 +46,7 @@ const handleSubmit = (event) => {
         alert('Transação registrada com sucesso!');
     })
     .catch(() => {
+        removeLoading();
         alert('Ocorreu um erro ao registrar a transação.');
     });
 
