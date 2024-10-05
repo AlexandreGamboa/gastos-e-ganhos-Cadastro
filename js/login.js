@@ -1,9 +1,33 @@
-function validateLogin() {
+async function fetchPasswords() {
+    try {
+        const response = await fetch('https://sheetdb.io/api/v1/f6stdqjfoe7ln');
+        const data = await response.json();
+        console.log('Dados recebidos da API:', data); // Adicionado para depuração
+
+        const passwords = {};
+        data.forEach(user => {
+            passwords[user.email] = user.senha;
+        });
+
+        return passwords;
+    } catch (error) {
+        console.error('Erro ao buscar senhas:', error);
+        return null;
+    }
+}
+
+async function validateLogin() {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
-    const passwordRenata = localStorage.getItem('passwordRenata');
-    const passwordMarcelo = localStorage.getItem('passwordMarcelo');
+    const passwords = await fetchPasswords();
+    if (!passwords) {
+        alert('Erro ao buscar senhas. Tente novamente.');
+        return;
+    }
+
+    const passwordRenata = passwords['renata.c.olivio@gmail.com'];
+    const passwordMarcelo = passwords['marcelogamboa.sp@gmail.com'];
 
     console.log('Senha Renata:', passwordRenata);
     console.log('Senha Marcelo:', passwordMarcelo);
