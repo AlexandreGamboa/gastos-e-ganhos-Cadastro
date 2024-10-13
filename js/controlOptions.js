@@ -4,20 +4,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const opcoesGanhos = [
         { value: 'Aluguel', text: 'Aluguel' },
-        { value: 'Salário', text: 'Salário' }
+        { value: 'Salário', text: 'Salário' },
+        { value: 'Outro', text: 'Outro'}
     ];
 
     const opcoesGastos = [
         { value: 'Aluguel', text: 'Aluguel' },
+        { value: 'Cabeleleiro', text: 'Cabeleleiro'},
         { value: 'Educação', text: 'Educação' },
         { value: 'Entretenimento', text: 'Entretenimento' },
-        { value: 'mesada', text: 'mesada' },
+        { value: 'informatica', text: 'informatica'},
+        { value: 'Mesada', text: 'Mesada' },
         { value: 'Restaurante', text: 'Restaurante' },
         { value: 'Roupas e Calçados', text: 'Roupas e Calçados' },
         { value: 'Saúde', text: 'Saúde' },
+        { value: 'Serviços diversos', text: 'Serviços diversos'},
         { value: 'Supermercado', text: 'Supermercado' },
-        { value: 'Transporte', text: 'Transporte' }
-        
+        { value: 'Transporte', text: 'Transporte' },
+        { value: 'Outro', text: 'Outro' }
+
     ];
 
     function atualizarOpcoes() {
@@ -41,6 +46,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     tipoSelect.addEventListener('change', atualizarOpcoes);
 
-    // Inicia as opções ao carregar a página
+    // Inicia as opções quando carrega a página
     atualizarOpcoes();
 });
