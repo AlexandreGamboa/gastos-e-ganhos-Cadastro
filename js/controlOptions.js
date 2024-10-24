@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const opcoesGanhos = [
         { value: 'Aluguel', text: 'Aluguel' },
         { value: 'Salário', text: 'Salário' },
+        { value: 'Rembolso', text: 'Rembolso' },
         { value: 'Outro', text: 'Outro'}
     ];
 
